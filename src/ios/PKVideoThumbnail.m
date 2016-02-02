@@ -65,7 +65,6 @@ BOOL extractVideoThumbnail ( NSString *theSourceVideoName,
 - (void) createThumbnail:(CDVInvokedUrlCommand*)command
 {
     CDVPluginResult* pluginResult = nil;
-    NSString* javaScript = nil;
 
     @try {
         NSString* theSourceVideoName = [command.arguments objectAtIndex:0];
