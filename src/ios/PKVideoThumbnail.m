@@ -74,16 +74,16 @@ BOOL extractVideoThumbnail ( NSString *theSourceVideoName,
         if ( extractVideoThumbnail(theSourceVideoName, theTargetImageName) )
         {
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:theTargetImageName];
-            [self.commandDelegate sendPluginResult:pluginResult command.callbackId];
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
         else
         {
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:theTargetImageName];
-            [self.commandDelegate sendPluginResult:pluginResult command.callbackId];
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
     } @catch (NSException* exception) {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_JSON_EXCEPTION messageAsString:[exception reason]];
-        [self.commandDelegate sendPluginResult:pluginResult command.callbackId];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }
 }
 @end
